@@ -12,23 +12,7 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    private let login = LoginData(
-        user: "User",
-        password: "Password",
-        personalData: PersonalData(
-            name: "Daniil",
-            surname: "Toropov",
-            photo: "avatar",
-            company: "Pixar",
-            department: "Toy Story",
-            position: "IOS Developer")
-          )
-
-    private let alert = AlertData(
-        title: "Invalid username or password",
-        message: "Please, enter your correct username or password",
-        okTitle: "Ok",
-        forgotTitle: "Oops")
+    let profile = LoginData.getLoginData()
     
 //MARK: - Override functions
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -45,31 +29,24 @@ final class LoginViewController: UIViewController {
             
             if let welcomeViewController = viewController as? WelcomeViewController
             {
-                welcomeViewController.user = login.user
-                welcomeViewController.name = login.personalData.name
-                welcomeViewController.surname = login.personalData.surname
+                welcomeViewController.login = profile
             }
             else if let navigationController = viewController as? UINavigationController
             {
             guard let profileViewController = navigationController.topViewController as? ProfileViewController else { return }
                 
-                profileViewController.name = login.personalData.name
-                profileViewController.surname = login.personalData.surname
-                profileViewController.company = login.personalData.company
-                profileViewController.department = login.personalData.department
-                profileViewController.position = login.personalData.position
-                profileViewController.photo = login.personalData.photo
+                profileViewController.user = profile
             }
         }
     }
     
     override func shouldPerformSegue( withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard usernameTextField.text == login.user,
-              passwordTextField.text == login.password
+        guard usernameTextField.text == profile.user,
+              passwordTextField.text == profile.password
             else {
                 showAlert(
-                    title: alert.title,
-                    message: alert.message,
+                    title: "Invalid username or password",
+                    message: "Please, enter your correct username or password",
                     textField: passwordTextField
                 )
                 return false
@@ -80,8 +57,8 @@ final class LoginViewController: UIViewController {
 //MARK: - IBAction functions
     @IBAction func forgotRegisterData(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(title: alert.title, message: "Your name is \(login.user) 😉")
-        : showAlert(title: alert.title, message: "Your password is \(login.password) 😉")
+        ? showAlert(title: "Oops", message: "Your name is \(profile.user) 😉")
+        : showAlert(title: "Oops", message: "Your password is \(profile.password) 😉")
     }
 
     @IBAction func unwindLoginLabels(for segue: UIStoryboardSegue) {
@@ -97,7 +74,7 @@ final class LoginViewController: UIViewController {
             preferredStyle: .alert)
         
         let okAction = UIAlertAction(
-            title: alert.okTitle,
+            title: "Ok",
             style: .default) { _ in
                 textField?.text = ""
             }

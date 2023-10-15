@@ -45,6 +45,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B62865452ADC5D8800E287EC /* ViewContollers */ = {
+			isa = PBXGroup;
+			children = (
+				B628653D2AD6FAFB00E287EC /* BiographyViewController.swift */,
+				B628653B2AD6FAC100E287EC /* ProfileViewController.swift */,
+				B6892A352AD2B2BD00A5F179 /* WelcomeViewController.swift */,
+				B6892A252AD2A14D00A5F179 /* LoginViewController.swift */,
+			);
+			path = ViewContollers;
+			sourceTree = "<group>";
+		};
+		B62865462ADC5DA900E287EC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B628653F2AD7030E00E287EC /* UserData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B62865472ADC5DB600E287EC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B6892A272AD2A14D00A5F179 /* Main.storyboard */,
+				B6892A2C2AD2A15000A5F179 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B62865482ADC5DCD00E287EC /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B6892A232AD2A14D00A5F179 /* SceneDelegate.swift */,
+				B6892A212AD2A14D00A5F179 /* AppDelegate.swift */,
+				B6892A2F2AD2A15000A5F179 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		B62865492ADC5E2100E287EC /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				B6892A2A2AD2A15000A5F179 /* Assets.xcassets */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
 		B6892A152AD2A14D00A5F179 = {
 			isa = PBXGroup;
 			children = (
@@ -64,17 +110,11 @@
 		B6892A202AD2A14D00A5F179 /* AboutMeApp */ = {
 			isa = PBXGroup;
 			children = (
-				B6892A212AD2A14D00A5F179 /* AppDelegate.swift */,
-				B6892A232AD2A14D00A5F179 /* SceneDelegate.swift */,
-				B628653F2AD7030E00E287EC /* UserData.swift */,
-				B6892A252AD2A14D00A5F179 /* LoginViewController.swift */,
-				B6892A352AD2B2BD00A5F179 /* WelcomeViewController.swift */,
-				B628653B2AD6FAC100E287EC /* ProfileViewController.swift */,
-				B628653D2AD6FAFB00E287EC /* BiographyViewController.swift */,
-				B6892A272AD2A14D00A5F179 /* Main.storyboard */,
-				B6892A2A2AD2A15000A5F179 /* Assets.xcassets */,
-				B6892A2C2AD2A15000A5F179 /* LaunchScreen.storyboard */,
-				B6892A2F2AD2A15000A5F179 /* Info.plist */,
+				B62865452ADC5D8800E287EC /* ViewContollers */,
+				B62865472ADC5DB600E287EC /* Storyboards */,
+				B62865462ADC5DA900E287EC /* Models */,
+				B62865492ADC5E2100E287EC /* Resourses */,
+				B62865482ADC5DCD00E287EC /* SupportingFiles */,
 			);
 			path = AboutMeApp;
 			sourceTree = "<group>";
@@ -304,7 +344,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AboutMeApp/Info.plist;
+				INFOPLIST_FILE = AboutMeApp/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -334,7 +374,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AboutMeApp/Info.plist;
+				INFOPLIST_FILE = AboutMeApp/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

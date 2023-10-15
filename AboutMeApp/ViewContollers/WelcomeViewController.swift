@@ -12,9 +12,7 @@ final class WelcomeViewController: UIViewController {
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var welcomeNameLabel: UILabel!
     
-    var user = ""
-    var name = ""
-    var surname = ""
+    var login: LoginData!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +21,15 @@ final class WelcomeViewController: UIViewController {
         welcomeLabel.textColor = .white
         welcomeNameLabel.textColor = .white
         
-        welcomeLabel.text = "Welcome, \(user)!"
-        welcomeNameLabel.text = "My name is \(name) \(surname)."
-        }
+        welcomeLabel.text = "Welcome, \(login.user)!"
+        welcomeNameLabel.text = "My name is \(login.personalData.fullName)."
+    }
+}
+//MARK: - Extensions
     
-//MARK: - Private functions
-    private func setGradientColor() {
+extension UIViewController {
+    
+    func setGradientColor() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [
